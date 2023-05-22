@@ -1,9 +1,10 @@
 .row > p{
     margin-right: 10px;
     width: 160px;
+    font-size: 18px;
 }
 .row > button{
-    font-size: 10px;
+    font-size: 14px;
     margin-right: 10px;
     padding: 5px;
 }
