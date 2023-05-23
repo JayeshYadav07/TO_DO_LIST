@@ -1,17 +1,17 @@
 import React from "react";
 import "./List.css";
-export default function List({ data, deleteTask, editTask, moveUp, moveDown }) {
+export default function List({ data, dispatch, editTask }) {
     function handleDelete(id) {
-        deleteTask(id);
+        dispatch({ type: "REMOVE", payload: id });
     }
     function handleEdit(item) {
         editTask(item);
     }
     function handleUp(item) {
-        moveUp(item.id);
+        dispatch({ type: "MOVE UP", payload: item.id });
     }
     function handleDown(item) {
-        moveDown(item.id);
+        dispatch({ type: "MOVE DOWN", payload: item.id });
     }
     return (
         <div>
