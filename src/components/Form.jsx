@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-export default function Form({ addTask, newTask, updateTask }) {
+export default function Form({ newTask, dispatch }) {
     const [taskName, setTaskName] = useState("");
     function handleSubmit(e) {
         e.preventDefault();
         if (newTask) {
             newTask.task = taskName;
-            updateTask(newTask);
+            dispatch({ type: "EDIT", payload: newTask });
         } else {
-            addTask(taskName);
+            dispatch({ type: "ADD", payload: taskName });
         }
         setTaskName("");
     }
